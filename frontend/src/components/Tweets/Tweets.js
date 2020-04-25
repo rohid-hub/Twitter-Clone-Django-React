@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Tweet from "./Tweet";
 import { fetchTweets, postTweet } from "../../api";
 import CreateTweet from "./CreateTweet";
+import Loading from "../Loading/Loading";
 
 export class Tweets extends Component {
     constructor(props) {
@@ -35,7 +36,9 @@ export class Tweets extends Component {
                     <Tweet key={key} data={tweet} />
                 ))}
             </div>
-        ) : null;
+        ) : (
+            <Loading />
+        );
     }
 }
 

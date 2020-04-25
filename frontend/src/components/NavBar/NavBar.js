@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 function NavBar({ loggedIn }) {
     return (
-        <header className="nav-bar wrapper">
-            <nav className="nav">
+        <header className="nav-bar">
+            <nav className="nav wrapper">
                 <Link to="/" className="nav-logo">
                     Twitter Clone
                 </Link>
