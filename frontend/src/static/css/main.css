@@ -308,10 +308,12 @@ body {
   width: 100%;
   min-width: 100%;
   max-width: 100%;
-  min-height: calc(2rem);
+  min-height: calc(2rem + 30px);
+  max-height: calc(2rem + 30px);
+  resize: none;
   padding: 10px 20px;
   border: none;
-  background-color: rgba(45, 178, 255, 0.05);
+  background-color: rgba(45, 178, 255, 0.1);
   border-radius: 10px;
   margin-bottom: 20px;
   font-size: 1rem;
@@ -322,7 +324,7 @@ body {
 }
 
 .create-tweet-form textarea:focus {
-  background-color: rgba(45, 178, 255, 0.1);
+  background-color: rgba(45, 178, 255, 0.2);
 }
 
 .create-tweet-form button {
@@ -338,5 +340,71 @@ body {
   color: #fff;
   -webkit-transition: all ease-in-out 200ms;
   transition: all ease-in-out 200ms;
+}
+
+.log-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid rgba(45, 178, 255, 0.3);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.log-form input {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #333;
+  background-color: rgba(45, 178, 255, 0.1);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  -webkit-transition: all ease-in-out 200ms;
+  transition: all ease-in-out 200ms;
+}
+
+.log-form input:focus {
+  background-color: rgba(45, 178, 255, 0.2);
+}
+
+.log-form button {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #2db2ff;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  -webkit-transition: all ease-in-out 200ms;
+  transition: all ease-in-out 200ms;
+}
+
+.log-form p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+}
+
+.log-form a {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #2db2ff;
+  font-weight: 600;
 }
 /*# sourceMappingURL=main.css.map */

@@ -19,8 +19,7 @@ function NavBar({ loggedIn }) {
                     </ul>
                 ) : (
                     <ul className="user-log">
-                        <Link to="/admin">Log in</Link>
-                        <Link to="/">Sign up</Link>
+                        <Link to="/login">Log in</Link>
                     </ul>
                 )}
             </nav>
