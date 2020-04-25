@@ -1,5 +1,10 @@
 import fetchTweets from "./fetchTweets";
+import postTweet from "./postTweet";
+import axios from "axios";
 
-export const url = "http://localhost:8000/api";
+axios.defaults.xsrfCookieName = "csrftoken";
+axios.defaults.xsrfHeaderName = "X-CSRFToken";
 
-export { fetchTweets };
+const url = "http://localhost:8000/api";
+
+export { fetchTweets, postTweet, url };
