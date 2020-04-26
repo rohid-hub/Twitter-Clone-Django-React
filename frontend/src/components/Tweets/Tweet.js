@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Tweet = ({ data: { id, text } }) => {
+const Tweet = ({ data: { id, text, date } }) => {
     const textList = text.split("\n");
     const modifiedText = textList.map((t, i) => {
         const splitBySpace = t.split(" ");
@@ -26,7 +26,10 @@ const Tweet = ({ data: { id, text } }) => {
                 <p className="user-name">User Name</p>
                 <p className="user-id">@user_id</p>
             </div>
-            <div className="tweet-text">{modifiedText}</div>
+            <div className="tweet-text">
+                <p className="date">{new Date(date).toDateString()}</p>
+                {modifiedText}
+            </div>
             <div className="btns">
                 <button className="tweet-btn like" disabled={true}>
                     Like

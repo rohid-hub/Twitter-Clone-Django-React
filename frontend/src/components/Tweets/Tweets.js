@@ -30,7 +30,7 @@ export class Tweets extends Component {
     render() {
         const { tweets } = this.state;
         let tweetList = [];
-        if (tweets.length > 0) {
+        if (tweets) {
             tweetList = tweets.map((tweet) => (
                 <Tweet
                     key={tweet.id}

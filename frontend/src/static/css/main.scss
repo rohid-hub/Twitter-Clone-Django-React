@@ -113,6 +113,44 @@ body {
                 }
             }
         }
+        .user-avater {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            p {
+                font-weight: 600;
+            }
+            .user-dropdown-menu {
+                display: none;
+                position: absolute;
+                background-color: $primary-color;
+                top: 50px;
+                right: 0;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+                box-shadow: 0 0px 20px rgba($color: #000, $alpha: 0.2);
+                border-radius: 10px;
+                width: 200px;
+                a {
+                    display: block;
+                    width: 100%;
+                    text-align: start;
+                }
+            }
+        }
     }
 }
 .tweets-wrapper {
@@ -168,6 +206,13 @@ body {
         border-left: 1px solid rgba(0, 0, 0, 0.1);
         a {
             color: $primary-color;
+        }
+        .date {
+            font-size: 0.8rem;
+            color: #555;
+            margin-top: -2rem;
+            margin-left: -10px;
+            margin-bottom: 1rem;
         }
     }
     .btns {
@@ -262,6 +307,16 @@ body {
         transition: all ease-in-out 200ms;
         &:focus {
             background-color: rgba($color: $primary-color, $alpha: 0.2);
+        }
+        &.wrong {
+            &:focus {
+                background-color: rgba($color: rgb(255, 20, 20), $alpha: 0.2);
+            }
+        }
+        &.right {
+            &:focus {
+                background-color: rgba($color: rgb(20, 225, 20), $alpha: 0.2);
+            }
         }
     }
     button {

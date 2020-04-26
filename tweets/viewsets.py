@@ -1,6 +1,6 @@
 from rest_framework import viewsets, permissions
 from tweets.models import Tweet
-from tweets.api.serializers import TweetSerializer
+from .serializers import TweetSerializer
 
 
 class TweetViewSet(viewsets.ModelViewSet):

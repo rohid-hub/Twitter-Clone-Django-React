@@ -41,7 +41,13 @@ export class App extends Component {
                             <Login checkLogInfo={this.checkLogInfo} />
                         )}
                     />
-                    <Route path="/signup" exact component={SignUp} />
+                    <Route
+                        path="/signup"
+                        exact
+                        component={() => (
+                            <SignUp checkLogInfo={this.checkLogInfo} />
+                        )}
+                    />
                 </div>
             </Router>
         );
