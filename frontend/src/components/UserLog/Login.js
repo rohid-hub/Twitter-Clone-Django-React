@@ -3,7 +3,7 @@ import LoginForm from "./LoginForm";
 import axios from "axios";
 const url = "http://localhost:8000/rest-auth/login/";
 
-const Login = () => {
+const Login = ({ checkLogInfo }) => {
     const handleLogIn = async (username, password) => {
         try {
             const {
@@ -22,6 +22,7 @@ const Login = () => {
                 }
             );
             localStorage.setItem("token", key);
+            checkLogInfo();
         } catch (error) {
             console.log(error);
         }

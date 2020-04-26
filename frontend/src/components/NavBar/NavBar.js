@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function NavBar({ loggedIn }) {
+function NavBar({ loggedIn, checkLogInfo }) {
     return (
         <header className="nav-bar">
             <nav className="nav wrapper">
@@ -15,7 +15,15 @@ function NavBar({ loggedIn }) {
                 {loggedIn ? (
                     <ul className="user-log">
                         <Link to="/">User Name</Link>
-                        <Link to="/">Logout</Link>
+                        <Link
+                            to=""
+                            onClick={(e) => {
+                                localStorage.clear();
+                                checkLogInfo();
+                            }}
+                        >
+                            Logout
+                        </Link>
                     </ul>
                 ) : (
                     <ul className="user-log">

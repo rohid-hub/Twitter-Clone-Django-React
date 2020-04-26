@@ -14,14 +14,33 @@ export class App extends Component {
         };
     }
 
+    componentDidMount() {
+        this.checkLogInfo();
+    }
+
+    checkLogInfo = () => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            this.setState({ loggedIn: true });
+        } else {
+            this.setState({ loggedIn: false });
+        }
+    };
+
     render() {
         const { loggedIn } = this.state;
         return (
             <Router>
-                <NavBar loggedIn={loggedIn} />
+                <NavBar loggedIn={loggedIn} checkLogInfo={this.checkLogInfo} />
                 <div className="wrapper">
                     <Route path="/" exact component={Tweets} />
-                    <Route path="/login" exact component={Login} />
+                    <Route
+                        path="/login"
+                        exact
+                        component={() => (
+                            <Login checkLogInfo={this.checkLogInfo} />
+                        )}
+                    />
                     <Route path="/signup" exact component={SignUp} />
                 </div>
             </Router>

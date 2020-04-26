@@ -15,7 +15,7 @@ export class Tweets extends Component {
 
     async componentDidMount() {
         const data = await fetchTweets();
-        this.setState({ tweets: data });
+        this.setState({ tweets: data, loading: false });
     }
 
     handleTweetSubmition = async (tweet) => {
@@ -29,15 +29,21 @@ export class Tweets extends Component {
 
     render() {
         const { tweets } = this.state;
-        return tweets.length > 0 ? (
+        let tweetList = [];
+        if (tweets.length > 0) {
+            tweetList = tweets.map((tweet) => (
+                <Tweet
+                    key={tweet.id}
+                    data={tweet}
+                    handleTweetSubmition={this.handleTweetSubmition}
+                />
+            ));
+        }
+        return (
             <div className="tweets-wrapper">
                 <CreateTweet handleTweetSubmition={this.handleTweetSubmition} />
-                {tweets.map((tweet, key) => (
-                    <Tweet key={key} data={tweet} />
-                ))}
+                {tweetList.length > 0 ? tweetList : <Loading />}
             </div>
-        ) : (
-            <Loading />
         );
     }
 }
